@@ -110,6 +110,14 @@ html, body {
 
 /* Mobil Mod */
 @media (max-width: 768px) {
+  .about-section {
+    flex-direction: column; /* Dikey hizala */
+  }
+  
+  .architect-photo {
+    margin: 0 0 20px 0; /* Alt boşluk */
+  }
+
   .navbar {
       flex-direction: row;
       justify-content: space-between;
@@ -177,3 +185,48 @@ html, body {
       transform: translateY(0);
   }
 }
+
+/* Hakkında Bölümü */
+.about-section {
+  display: flex;
+  padding: 80px 20px; /* Navbar'ın altından başlaması için boşluk bırak */
+  background-color: #f9f9f9; /* Arka plan rengi */
+}
+
+/* Mimar Fotoğrafı */
+.architect-photo {
+  flex: 1; /* Sol kısım */
+  display: flex;
+  justify-content: center; /* Ortala */
+  align-items: center; /* Dikey ortala */
+  margin-right: 20px; /* Sağ boşluk */
+}
+
+.architect-photo img {
+  width: 100%; /* Tam genişlik */
+  max-width: 300px; /* Maksimum genişlik */
+  border-radius: 15px; /* Köşeleri yuvarla */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Gölge efekti */
+}
+
+/* Mimar Bilgileri */
+.architect-info {
+  flex: 2; /* Sağ kısım */
+  display: flex;
+  flex-direction: column; /* Dikey hizala */
+  justify-content: center; /* Dikey ortala */
+}
+
+.architect-info h2 {
+  font-size: 2rem; /* Başlık boyutu */
+  margin-bottom: 10px; /* Alt boşluk */
+  color: #333; /* Başlık rengi */
+}
+
+.architect-info p {
+  font-size: 1rem; /* Metin boyutu */
+  margin-bottom: 10px; /* Alt boşluk */
+  color: #555; /* Metin rengi */
+}
+
+

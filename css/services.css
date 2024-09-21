@@ -1,11 +1,49 @@
 /* Genel Stiller */
 body {
-  font-family: 'Times New Roman', Times, serif; /* Font ayarı */
+  font-family: 'Times New Roman', Times, serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   line-height: 1.6;
   overflow-x: hidden;
+}
+
+/* Sayfanın ortasına hizalama */
+.services-title {
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Hizmet kutuları */
+.service-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; /* Kutular arası boşluk */
+  padding: 30px; /* Üst ve alt boşluk */
+}
+
+
+.service-box {
+  background: #f4f4f4; /* Kutunun arka plan rengi */
+  border: 1px solid #ccc; /* Kenar rengi */
+  border-radius: 8px; /* Köşe yuvarlama */
+  width: calc(25% - 25px); /* Her satırda 5 kutu olacak şekilde ayarla */
+  cursor: pointer; /* Fare işaretçisi */
+  transition: transform 0.3s; /* Hover efekti */
+  text-align: center; /* İçeriği ortala */
+  padding: 10px; /* İçerik için boşluk ekleyin */
+}
+
+
+
+.service-box img {
+  max-width: 100%; /* Resim genişliği */
+  border-radius: 8px 8px 0 0; /* Üst köşe yuvarlama */
+}
+
+.service-box:hover {
+  transform: scale(1.05); /* Hoverda büyüme efekti */
 }
 
 /* Tüm elemanlar için kutu modeli ayarlaması */
@@ -15,7 +53,6 @@ body {
   box-sizing: inherit;
 }
 
-
 /* Tüm sayfa için başlangıç sıfırlama */
 html, body {
   margin: 0;
@@ -24,7 +61,9 @@ html, body {
   width: 100%;
   overflow-x: hidden;
 }
-
+.main {
+  padding-top: 80px; /* Navbar yüksekliğine göre yukarıdan boşluk bırak */
+}
 /* Menü Çubuğu */
 .navbar {
   position: fixed;
@@ -39,6 +78,67 @@ html, body {
   border-bottom: 0px solid white; /* Kenar rengi */
   z-index: 1000;
   width: 100%;
+}
+
+/* Hakkında Bölümü */
+.about-section {
+  padding: 100px 20px; /* Navbar'dan aşağıda başlat */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.architect-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.architect-photo {
+  width: 150px;
+  height: auto;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.architect-details {
+  max-width: 500px;
+}
+
+/* Hizmetler */
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.service-card {
+  background: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 200px; /* Kart genişliği */
+  transition: transform 0.2s;
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+}
+
+.service-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
 }
 
 
@@ -108,58 +208,217 @@ html, body {
   color: white; /* Renk */
 }
 
-/* Mobil Mod */
+/* Modal genel stiller */
+.modal {
+  display: none; /* Başlangıçta gizli */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex; /* Flex kullanarak içeriği ortalayacağız */
+  align-items: center; /* Dikey ortalama */
+  justify-content: center; /* Yatay ortalama */
+}
+
+
+/* Modal içeriği */
+.modal-content {
+  flex-direction: column;
+  position: relative;
+  padding: 20px;
+  background-color: white;
+  width: 60%;
+  max-width: 800px;
+  display: flex;
+  justify-content: center; /* İçeriği ortalamak için */
+}
+
+/* Butonlar */
+.modal-buttons {
+  position: absolute; /* Konumlandırma */
+  top: 50%;
+  transform: translateY(-50%); /* Y ekseninde ortalama */
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.modal-image {
+  width: 40%;
+}
+
+.modal-info {
+  width: 50%;
+  padding-left: 20px;
+}
+.modal-button {
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+}
+
+.modal-button.prev-button {
+  position: absolute;
+  left: -60px; /* Sol dışına çıkar */
+}
+
+.modal-button.next-button {
+  position: absolute;
+  right: -60px; /* Sağ dışına çıkar */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-content {
+  animation: fadeIn 0.3s; /* Modal açıldığında animasyon */
+}
+
+/* Mobil görünüm */
 @media (max-width: 768px) {
-  .navbar {
-      flex-direction: row;
-      justify-content: space-between;
-  }
 
-  .menu-toggle {
-      display: block; /* Menü butonu mobilde göster */
-  }
-
-  .navbar-menu {
-    display: none; /* Başlangıçta gizli */
+  /*Modal Görünüm*/
+  modal-content {
     flex-direction: column;
-    width: 70%;
-    background: rgba(0, 0, 0, 0.9); /* Arka plan rengi */
-    padding: 10px 20px;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    height: 100vh;
-    overflow-y: auto;
-    transform: translateX(100%);
-    transition: transform 0.5s ease-out; /* Geçiş animasyonu */
+    width: 90%;
+    max-width: none;
   }
 
-  .navbar-menu.active {
-    display: flex; /* Menü açıldığında göster */
-    transform: translateX(0); /* Menü ekranın içine kayar */
+  .modal-image {
+    width: 100%;
   }
 
-  .navbar-menu li {
-      margin: 20px 0;
+  .modal-info {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .modal-buttons {
+    position: static;
+    justify-content: center;
+    margin-top: 20px;
+    transform: none;
+  }
+
+  .modal-button.prev-button,
+  .modal-button.next-button {
+    color: black;
+    position: static;
+    margin: 0 10px;
+  }
+  @keyframes fadeIn {
+    from {
       opacity: 0;
-      transform: translateY(-20px);
-      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-  }
-
-  .navbar-menu.active li {
+      transform: scale(0.8);
+    }
+    to {
       opacity: 1;
-      transform: translateY(0);
+      transform: scale(1);
+    }
+  }
+  
+  .modal-content {
+    animation: fadeIn 0.3s; /* Modal açıldığında animasyon */
+  }
+  
+
+  .service-container {
+    flex-direction: column; /* Dikey hizalama */
+    padding: 10px; /* Mobilde iç boşluk */
   }
 
-  .navbar-menu.active li:nth-child(1) { transition-delay: 0.1s; }
-  .navbar-menu.active li:nth-child(2) { transition-delay: 0.2s; }
-  .navbar-menu.active li:nth-child(3) { transition-delay: 0.3s; }
-  .navbar-menu.active li:nth-child(4) { transition-delay: 0.4s; }
-  .navbar-menu.active li:nth-child(5) { transition-delay: 0.5s; }
-
-  .contact-info {
-      display: none; /* Mobilde gizle */
+  .service-box {
+    width: 90%; /* Mobilde genişliği artır */
+    margin: 10px auto; /* Ortalamak için kenar boşlukları */
   }
+
+  .service-title {
+    font-size: 1.5rem; /* Mobilde başlık boyutunu ayarla */
+  }
+  /* Footer Mobil Mod */
+  .footer {
+    padding: 15px 0; /* Mobilde footer boşluğu ayarla */
+    font-size: 0.9rem; /* Font boyutunu küçült */
+  }
+
+  /* Hakkında Bölümü Mobil Mod */
+  .architect-info {
+    flex-direction: column; /* Dikey hizalama */
+    align-items: center; /* Ortala */
+  }
+
+  .architect-photo {
+    width: 120px; /* Mobilde fotoğraf boyutu */
+    margin-bottom: 10px; /* Alt boşluk ekle */
+  }
+
+  .architect-details {
+    text-align: center; /* Yazıyı ortala */
+  }
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu-toggle {
+    display: block; /* Menü butonu mobilde göster */
+}
+
+.navbar-menu {
+  display: none; /* Başlangıçta gizli */
+  flex-direction: column;
+  width: 70%;
+  background: rgba(0, 0, 0, 0.9); /* Arka plan rengi */
+  padding: 10px 20px;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  height: 100vh;
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-out; /* Geçiş animasyonu */
+}
+
+.navbar-menu.active {
+  display: flex; /* Menü açıldığında göster */
+  transform: translateX(0); /* Menü ekranın içine kayar */
+}
+
+.navbar-menu li {
+    margin: 20px 0;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.navbar-menu.active li {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.navbar-menu.active li:nth-child(1) { transition-delay: 0.1s; }
+.navbar-menu.active li:nth-child(2) { transition-delay: 0.2s; }
+.navbar-menu.active li:nth-child(3) { transition-delay: 0.3s; }
+.navbar-menu.active li:nth-child(4) { transition-delay: 0.4s; }
+.navbar-menu.active li:nth-child(5) { transition-delay: 0.5s; }
+
+.contact-info {
+    display: none; /* Mobilde gizle */
+}
 }
 
 /* Animasyonlar */

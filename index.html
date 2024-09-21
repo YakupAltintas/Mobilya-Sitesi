@@ -148,45 +148,8 @@
       </div>
     </footer>
 
-    <script >
-    
-    document.addEventListener("DOMContentLoaded", function () {
-      const menuToggle = document.querySelector(".menu-toggle");
-      const navbarMenu = document.querySelector(".navbar-menu");
-    
-      menuToggle.addEventListener("click", function () {
-        navbarMenu.classList.toggle("active"); // Menüye 'active' sınıfını ekleyip çıkarır
-      });
-    });
-    
-    // Menü dışına tıklandığında kapatma
-    document.addEventListener("click", function (event) {
-      if (
-        !navbarMenu.contains(event.target) &&
-        !menuToggle.contains(event.target)
-      ) {
-        navbarMenu.classList.remove("active");
-      }
-    });
-    
-    let lastScrollTop = 0;
-const navbar = document.querySelector('.navbar');
-
-window.addEventListener('scroll', function() {
-  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-  // Sayfa aşağı kayıyorsa navbar'ı gizle
-  if (scrollTop > lastScrollTop) {
-    navbar.classList.add('hidden');
-  } 
-  // Sayfa yukarı kayıyorsa navbar'ı göster
-  else {
-    navbar.classList.remove('hidden');
-  }
-  
-  // Son kaydırma pozisyonunu güncelle
-  lastScrollTop = scrollTop;
-});
+    <script src="js/index.js" >
+      
 </script>
   </body>
 </html>

@@ -80,16 +80,10 @@ html, body {
   justify-content: space-between;
   padding: 10px 20px;
   background: rgba(0, 0, 0, 0.9); /* Arka plan rengi */
-  border-bottom: 0px solid white; /* Kenar rengi */
   z-index: 1000;
   width: 100%;
-  transition: transform 0.3s ease-in-out; /* Animasyon için yumuşak geçiş */
-  will-change: transform; /* Performans için iyileştirme */
 }
 
-.navbar.hidden {
-    transform: translateY(-100%); /* Navbar'ı yukarıya kaydırarak gizler */
-  }
 /* Logo */
 .logo {
     display: flex;

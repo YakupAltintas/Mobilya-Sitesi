@@ -2,19 +2,16 @@
 <html lang="tr">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hakkımızda - Projemim Mobilya</title>
     <link rel="stylesheet" href="css/about.css" />
+    <title>Hakkında - Projemim Mobilya</title>
   </head>
   <body>
-    <!-- Navbar -->
     <header class="hero-section">
       <div class="navbar">
         <div class="logo">
           <img src="asset/logo.png" alt="Logo" />
         </div>
-        <!-- İletişim Bilgileri -->
         <div class="contact-info">
           <a href="tel:+905555555555" class="contact-item"
             >📞 +90 555 555 55 55</a
@@ -33,7 +30,17 @@
       </div>
     </header>
 
-    <!-- Footer -->
+    <main class="about-section">
+      <div class="architect-photo">
+        <img src="asset/ErkekCocukOdasi.jpg" alt="Mimar" />
+      </div>
+      <div class="architect-info">
+        <h2>Projemim Mobilya</h2>
+        <p><strong>Çalışma Alanlarımız:</strong> İç Mimarlık & Mobilya</p>
+        <p></p>
+      </div>
+    </main>
+
     <footer class="footer">
       <p>© 2024 Projemim Mobilya. Tüm hakları saklıdır.</p>
     </footer>
@@ -44,7 +51,7 @@
         const navbarMenu = document.querySelector(".navbar-menu");
 
         menuToggle.addEventListener("click", function () {
-          navbarMenu.classList.toggle("active"); // Menüye 'active' sınıfını ekleyip çıkarır
+          navbarMenu.classList.toggle("active");
         });
       });
     </script>
