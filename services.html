@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hakkımızda - Projemim Mobilya</title>
+    <link rel="stylesheet" href="css/services.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="hero-section">
+      <div class="navbar">
+        <div class="logo">
+          <img src="asset/logo.png" alt="Logo" />
+        </div>
+        <!-- İletişim Bilgileri -->
+        <div class="contact-info">
+          <a href="tel:+905555555555" class="contact-item"
+            >📞 +90 555 555 55 55</a
+          >
+          <a href="mailto:info@projemim.com" class="contact-item"
+            >✉ info@projemim.com</a
+          >
+        </div>
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+        <ul class="navbar-menu" id="navbar-menu">
+          <li><a href="index.html">Anasayfa</a></li>
+          <li><a href="services.html">Hizmetler</a></li>
+          <li><a href="project.html">Projeler</a></li>
+          <li><a href="about.html">Hakkımızda</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2024 Projemim Mobilya. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navbarMenu = document.querySelector(".navbar-menu");
+
+        menuToggle.addEventListener("click", function () {
+          navbarMenu.classList.toggle("active"); // Menüye 'active' sınıfını ekleyip çıkarır
+        });
+      });
+    </script>
+  </body>
+</html>
