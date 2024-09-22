@@ -1,8 +1,6 @@
 /* Genel Stiller */
 body {
   font-family: 'Times New Roman', Times, serif; /* Font ayarı */
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   line-height: 1.6;
   overflow-x: hidden;
@@ -36,7 +34,6 @@ html, body {
   justify-content: space-between;
   padding: 10px 20px;
   background: rgba(0, 0, 0, 0.9); /* Arka plan rengi */
-  border-bottom: 2px solid white; /* Kenar rengi */
   z-index: 1000;
   width: 100%;
 }

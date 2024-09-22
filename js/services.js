@@ -1,90 +1,3 @@
-// Service Modal ve Navigation İşlevleri
-const serviceBoxes = document.querySelectorAll(".service-box");
-const modal = document.getElementById("modal");
-const modalImage = document.getElementById("modal-image");
-const modalTitle = document.getElementById("modal-title");
-const modalDescription = document.getElementById("modal-description");
-const close = document.getElementById("close");
-const prevButton = document.querySelector(".prev-button");
-const nextButton = document.querySelector(".next-button");
-let currentIndex = 0;
-
-const services = [
-  {
-    image: "asset/ErkekCocukOdasi.jpg",
-    title: "Hizmet 1",
-    description: "Hizmet 1 detaylı açıklaması.",
-  },
-  {
-    image: "asset/KizCocukOdasi.jpg",
-    title: "Hizmet 2",
-    description: "Hizmet 2 detaylı açıklaması.",
-  },
-  {
-    image: "asset/H_danismanlik.jpg",
-    title: "Hizmet 3",
-    description: "Hizmet 3 detaylı açıklaması.",
-  },
-  {
-    image: "asset/modernmutfak.jpg",
-    title: "Hizmet 4",
-    description: "Hizmet 4 detaylı açıklaması.",
-  },
-  {
-    image: "asset/modernmutfak.jpg",
-    title: "Hizmet 5",
-    description: "Hizmet 5 detaylı açıklaması.",
-  },
-  {
-    image: "asset/modernmutfak.jpg",
-    title: "Hizmet 6",
-    description: "Hizmet 6 detaylı açıklaması.",
-  },
-];
-
-// Modal başlangıçta gizli
-modal.style.display = "none";
-
-// Kutulara tıklama ile modal açılması
-serviceBoxes.forEach((box, index) => {
-  box.addEventListener("click", () => {
-    currentIndex = index; // Tıklanan kutunun indeksini ayarla
-    openModal(currentIndex);
-  });
-});
-
-// Modalı açma fonksiyonu
-function openModal(index) {
-  modalImage.src = services[index].image;
-  modalTitle.innerText = services[index].title;
-  modalDescription.innerText = services[index].description;
-  modal.style.display = "flex"; // Modalı göster
-}
-
-// Modal kapama butonu
-close.addEventListener("click", () => {
-  modal.style.display = "none"; // Modalı kapat
-});
-
-// Önceki buton
-prevButton.addEventListener("click", () => {
-  currentIndex = currentIndex > 0 ? currentIndex - 1 : services.length - 1;
-  openModal(currentIndex); // Önceki hizmete geç
-});
-
-// Sonraki buton
-nextButton.addEventListener("click", () => {
-  currentIndex = currentIndex < services.length - 1 ? currentIndex + 1 : 0;
-  openModal(currentIndex); // Sonraki hizmete geç
-});
-
-// Pencere dışında tıklandığında modalı kapatma
-window.addEventListener("click", (event) => {
-  if (event.target === modal) {
-    modal.style.display = "none"; // Modalı kapat
-  }
-});
-
 // Menü açma/kapatma
 const menuToggle = document.querySelector(".menu-toggle");
 const navbarMenu = document.querySelector(".navbar-menu");
@@ -103,18 +16,95 @@ document.addEventListener("click", function (event) {
   }
 });
 
-// Klavye ile modal navigasyonu
-document.addEventListener("keydown", function (event) {
-  if (modal.style.display === "flex") {
-    // Modal açık olduğunda
-    if (event.key === "ArrowLeft") {
-      currentIndex = currentIndex > 0 ? currentIndex - 1 : services.length - 1;
-      openModal(currentIndex); // Klavye ile önceki hizmete geç
-    } else if (event.key === "ArrowRight") {
-      currentIndex = currentIndex < services.length - 1 ? currentIndex + 1 : 0;
-      openModal(currentIndex); // Klavye ile sonraki hizmete geç
-    } else if (event.key === "Escape") {
-      modal.style.display = "none"; // Klavye ile modalı kapat (Escape tuşu)
-    }
-  }
+const services = [
+  {
+    title: "Özel Tasarım Çocuk Odaları",
+    description:
+      "Çocukların hayal gücünü yansıtan mobilyalar, alanınıza özel olarak tasarlanır.",
+    image: "asset/ErkekCocukOdasi.jpg",
+  },
+  {
+    title: "Yatak Odası Tasarımları",
+    description:
+      "Kişisel zevkinizi yansıtan mobilyalar, alanınıza özel olarak tasarlanır.",
+    image: "asset/mobilya.jpg",
+  },
+  {
+    title: "Misafir Odası Tasarımları",
+    description:
+      "En iyi malzemeler ve ustalıkla yapılmış, çağdaş iç tasarım çözümleri.",
+    image: "asset/H_IcMekan.jpg",
+  },
+  {
+    title: "Genç Odası Tasarımları",
+    description:
+      "Alanınızı en verimli şekilde kullanmak için profesyonel mekan planlama hizmetleri.",
+    image: "asset/KizCocukOdasi.jpg",
+  },
+  {
+    title: "Modern Mutfak Tasarımları",
+    description:
+      "Deneyimli ekibimizden alanınıza ve ihtiyaçlarınıza yönelik uzman önerileri.",
+    image: "asset/modernmutfak.jpg",
+  },
+  {
+    title: "Giyisi Dolapları",
+    description:
+      "Deneyimli ekibimizden alanınıza ve ihtiyaçlarınıza yönelik uzman önerileri.",
+    image: "asset/modernmutfak.jpg",
+  },
+  {
+    title: "Tv Üniteleri",
+    description:
+      "Deneyimli ekibimizden alanınıza ve ihtiyaçlarınıza yönelik uzman önerileri.",
+    image: "asset/modernmutfak.jpg",
+  },
+  {
+    title: "Hol Tasarımları",
+    description:
+      "Deneyimli ekibimizden alanınıza ve ihtiyaçlarınıza yönelik uzman önerileri.",
+    image: "asset/modernmutfak.jpg",
+  },
+  {
+    title: "Wc Tasarımları",
+    description:
+      "Deneyimli ekibimizden alanınıza ve ihtiyaçlarınıza yönelik uzman önerileri.",
+    image: "asset/modernmutfak.jpg",
+  },
+  {
+    title: "Banyo Tasarımları",
+    description:
+      "Deneyimli ekibimizden alanınıza ve ihtiyaçlarınıza yönelik uzman önerileri.",
+    image: "asset/modernmutfak.jpg",
+  },
+  {
+    title: "Yemek Masası Tasarımları",
+    description:
+      "Deneyimli ekibimizden alanınıza ve ihtiyaçlarınıza yönelik uzman önerileri.",
+    image: "asset/modernmutfak.jpg",
+  },
+  {
+    title: "Koltuk Sandalye Tasarımları",
+    description:
+      "Deneyimli ekibimizden alanınıza ve ihtiyaçlarınıza yönelik uzman önerileri.",
+    image: "asset/modernmutfak.jpg",
+  },
+  {
+    title: "Kapı Tasarımları",
+    description:
+      "Deneyimli ekibimizden alanınıza ve ihtiyaçlarınıza yönelik uzman önerileri.",
+    image: "asset/modernmutfak.jpg",
+  },
+];
+
+const servicesSection = document.getElementById("services-section");
+services.forEach((service) => {
+  const serviceBox = document.createElement("div");
+  serviceBox.className = "service-box";
+  serviceBox.innerHTML = `
+        <img src="${service.image}" alt="${service.title}" />
+        <h2>${service.title}</h2>
+        <p>${service.description}</p>
+    `;
+  servicesSection.appendChild(serviceBox);
 });

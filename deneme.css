@@ -1,0 +1,345 @@
+/* Genel Stiller */
+body {
+    font-family: 'Times New Roman', Times, serif; /* Font ayarı */
+    box-sizing: border-box;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  
+  /* Tüm elemanlar için kutu modeli ayarlaması */
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+  
+  
+  /* Tüm sayfa için başlangıç sıfırlama */
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Menü Çubuğu */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.9); /* Arka plan rengi */
+    z-index: 1000;
+    width: 100%;
+  }
+  
+  
+  /* Logo */
+  .logo {
+    display: flex;
+    align-items: center;
+    margin-right: auto; /* Sol tarafta boşluk bırak */
+  }
+  
+  /* Logo */
+  .logo img {
+    height: 60px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  
+  /* İletişim Bilgileri (Telefon ve E-posta) */
+  .contact-info {
+    display: flex;
+    align-items: center; /* Dikeyde ortala */
+    gap: 15px; /* İletişim bilgileri arasındaki boşluk */
+    color: white;
+    margin: 0 auto; /* Ortalamak için otomatik kenar boşlukları */
+  }
+  
+  .contact-item {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+  }
+  .contact-item:hover {
+    color: #ddd; /* Hover rengi */
+  }
+  /* Menü Çubuğu Öğeleri */
+  .navbar-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .navbar-menu li {
+    margin:0;
+    padding: 0;
+  }
+  
+  .navbar-menu a {
+    color: white; /* Renk */
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px;
+  }
+  
+  .navbar-menu a:hover {
+    text-decoration: underline; /* Hover durumu */
+  }
+  
+  .menu-toggle {
+    display: none; /* Başlangıçta gizli */
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white; /* Renk */
+  }
+
+  /* Hero Section */
+.hero-section {
+    margin-top: 6%;
+    background-image: url('asset/backround2.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px; /* üstten ve alttan boşluk */
+    color: white; /* Metin rengi */
+    text-align: center;
+}
+
+/* Hero Content */
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.about-section {
+    padding: 80px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.about-section {
+    padding: 80px 20px;
+    background-color: #f9f9f9;
+}
+.about-section {
+    padding: 80px 20px;
+    background-color: #f9f9f9;
+}
+
+/*Mimarlar*/
+.architect-profile {
+    display: flex;
+    align-items: center;
+    margin: 40px 0; /* Bölümler arası boşluk */
+}
+
+.architect-photo {
+    flex: 1; /* Fotoğraf kısmı */
+    display: flex;
+    justify-content: center; /* Fotoğrafı ortala */
+}
+
+.architect-photo img {
+    width: 350px; /* Fotoğraf boyutu */
+    height: auto; /* Orantılı boyut */
+    border-radius: 10px; /* Kenarları yuvarlat */
+}
+
+.architect-info {
+    flex: 1;
+    text-align: left; /* Mimarlık bilgilerini sola hizala */
+    padding: 20px; /* Daha büyük bir boşluk ekle */
+    margin-left: 20px; /* Fotoğrafa daha yakın olması için sol boşluk */
+    font-size: 1.1rem; /* Yazı boyutunu biraz büyüt */
+}
+
+
+.reverse {
+    margin-left: 0px;
+    margin-right: 250px;
+    flex-direction: row-reverse; /* Ters yönlendirme */
+}
+
+.reverse .architect-info {
+    margin-left: 250;
+    margin-right: 0px;
+    text-align: left; /* Ters olanlarda sağa hizala */
+}
+
+/* Fotoğraf hover efekti */
+.architect-photo img:hover {
+    transform: scale(1.05); /* Hafif büyütme efekti */
+    transition: transform 0.3s ease-in-out; /* Geçiş animasyonu */
+}
+
+/* Hero metni için gölge efekti ekleme */
+.hero-content h1, .hero-content p {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Yazı gölgesi */
+}
+
+/* Mobil için mimar profili düzenlemeleri */
+@media (max-width: 768px) {
+    .architect-profile {
+        flex-direction: column; /* Mobilde dikey hizala */
+        align-items: left; /* Ortala */
+        margin: 20px 0; /* Mobilde alt üst boşluk */
+    }
+
+    .architect-photo, .architect-info {
+        flex: none; /* Flex özelliğini kaldır */
+        width: 100%; /* Elemanların genişliğini tam genişlik yap */
+        margin-bottom: 15px; /* Alt boşluk ekle */
+        text-align: center; /* Metni ortala */
+    }
+
+    .architect-info {
+        padding: 0 20px; /* Bilgi kısmına içten boşluk ekle */
+        margin-left: 0; /* Soldan boşluk kaldır */
+    }
+    
+    .reverse {
+        text-align: left;
+        flex-direction: column-reverse; /* Ters yönlendirme mobilde de dikey olacak */
+        margin-right: 0; /* Sağdan boşluk kaldır */
+    }
+
+    .reverse .architect-info {
+        margin-right: 0;
+        text-align: left; /* Sağ boşluğu kaldır */
+    }
+}
+
+/* Mobilde mimarlık fotoğrafı için düzenlemeler */
+@media (max-width: 768px) {
+    .architect-photo img {
+        width: 100%; /* Fotoğrafı ekran genişliğine göre ayarla */
+        max-width: 350px; /* Maksimum genişlik belirle */
+        height: auto; /* Oranlı yüksekliği koru */
+    }
+}
+
+
+
+  /* Mobil Mod */
+  @media (max-width: 768px) {
+    .about-section {
+      flex-direction: column; /* Dikey hizala */
+    }
+    
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+  
+    .menu-toggle {
+        display: block; /* Menü butonu mobilde göster */
+    }
+  
+    .navbar-menu {
+      display: none; /* Başlangıçta gizli */
+      flex-direction: column;
+      width: 70%;
+      background: rgba(0, 0, 0, 0.9); /* Arka plan rengi */
+      padding: 10px 20px;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      height: 100vh;
+      overflow-y: auto;
+      transform: translateX(100%);
+      transition: transform 0.5s ease-out; /* Geçiş animasyonu */
+    }
+  
+    .navbar-menu.active {
+      display: flex; /* Menü açıldığında göster */
+      transform: translateX(0); /* Menü ekranın içine kayar */
+    }
+  
+    .navbar-menu li {
+        margin: 20px 0;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+  
+    .navbar-menu.active li {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  
+    .navbar-menu.active li:nth-child(1) { transition-delay: 0.1s; }
+    .navbar-menu.active li:nth-child(2) { transition-delay: 0.2s; }
+    .navbar-menu.active li:nth-child(3) { transition-delay: 0.3s; }
+    .navbar-menu.active li:nth-child(4) { transition-delay: 0.4s; }
+    .navbar-menu.active li:nth-child(5) { transition-delay: 0.5s; }
+  
+    .contact-info {
+        display: none; /* Mobilde gizle */
+    }
+  }
+  
+  /* Animasyonlar */
+  .navbar-menu.active li {
+    animation: fadeSlideIn 1s ease-out forwards;
+  }
+  
+  @keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+
+/* Alt Kısım (Footer) */
+.footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Flexbox ile sosyal medya simgeleri arasında boşluk bırak */
+}
+
+.footer-content p {
+    margin: 0; /* Alt kısımdaki metnin dış boşluğunu sıfırla */
+}
+
+.footer-content .social-media a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 10px; /* Sosyal medya simgeleri arasında yatay boşluk bırak */
+}
+
+.footer-content .social-media a:hover {
+    text-decoration: underline; /* Hover olduğunda altı çizili yap */
+}

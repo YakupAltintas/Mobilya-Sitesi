@@ -4,83 +4,77 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hizmetler - Projemim Mobilya</title>
+    <title>Projemim Mobilya</title>
     <link rel="stylesheet" href="css/services.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
-    <!-- Navbar -->
-    <header class="navbar">
-      <div class="logo">
-        <img src="asset/logo.png" alt="Logo" />
+    <!-- Üst Kısım (Hero Bölümü) -->
+    <header class="hero-section">
+      <div class="navbar">
+        <div class="logo">
+          <img src="asset/logo.png" alt="Logo" />
+        </div>
+        <!-- İletişim Bilgileri -->
+        <div class="contact-info">
+          <a href="tel:+905555555555" class="contact-item"
+            >📞 +90 555 555 55 55</a
+          >
+          <a href="mailto:info@projemim.com" class="contact-item"
+            >✉ info@projemim.com</a
+          >
+        </div>
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+        <ul class="navbar-menu" id="navbar-menu">
+          <li><a href="index.html">Anasayfa</a></li>
+          <li><a href="services.html">Hizmetler</a></li>
+          <li><a href="project.html">Projeler</a></li>
+          <li><a href="about.html">Hakkımızda</a></li>
+        </ul>
       </div>
-      <div class="contact-info">
-        <a href="tel:+905555555555" class="contact-item"
-          >📞 +90 555 555 55 55</a
-        >
-        <a href="mailto:info@projemim.com" class="contact-item"
-          >✉ info@projemim.com</a
-        >
+
+      <div class="hero-content">
+        <h1>Hizmetlerimiz</h1>
+        <p>Eviniz için benzersiz tasarımlar, zarif detaylar ve mükemmel uyum</p>
       </div>
-      <div class="menu-toggle" id="menu-toggle">☰</div>
-      <ul class="navbar-menu" id="navbar-menu">
-        <li><a href="index.html">Anasayfa</a></li>
-        <li><a href="services.html">Hizmetler</a></li>
-        <li><a href="project.html">Projeler</a></li>
-        <li><a href="about.html">Hakkımızda</a></li>
-      </ul>
     </header>
 
-    <!-- Hizmetler Bölümü -->
-    <main class="main">
-      <h1 class="services-title">Hizmetler</h1>
-      <div class="service-container">
-        <div class="service-box" data-service="1">
-          <img src="asset/ErkekCocukOdasi.jpg" alt="Hizmet 1" />
-          <h2>Hizmet 1</h2>
-        </div>
-        <div class="service-box" data-service="2">
-          <img src="asset/ErkekCocukOdasi.jpg" alt="Hizmet 2" />
-          <h2>Hizmet 2</h2>
-        </div>
-        <div class="service-box" data-service="3">
-          <img src="asset/ErkekCocukOdasi.jpg" alt="Hizmet 3" />
-          <h2>Hizmet 3</h2>
-        </div>
-        <div class="service-box" data-service="4">
-          <img src="asset/ErkekCocukOdasi.jpg" alt="Hizmet 4" />
-          <h2>Hizmet 4</h2>
-        </div>
-        <div class="service-box" data-service="5">
-          <img src="asset/ErkekCocukOdasi.jpg" alt="Hizmet 5" />
-          <h2>Hizmet 5</h2>
-        </div>
-        <div class="service-box" data-service="6">
-          <img src="asset/ErkekCocukOdasi.jpg" alt="Hizmet 6" />
-          <h2>Hizmet 6</h2>
-        </div>
-      </div>
-    </main>
+    <!-- Services Section -->
+    <section class="services-section" id="services-section"></section>
 
-    <!-- Modal -->
-    <div id="modal" class="modal">
-      <div class="modal-content">
-        <img id="modal-image" class="modal-image" src="" alt="Hizmet Görseli" />
-        <div class="modal-info">
-          <div id="modal-title" class="modal-header"></div>
-          <div id="modal-description" class="modal-description"></div>
-        </div>
-        <!-- Modal'ın sağ ve solunda butonlar -->
-        <div class="modal-buttons">
-          <button class="modal-button prev-button">←</button>
-          <button class="modal-button next-button">→</button>
-        </div>
-      </div>
-      <div id="close" class="close"></div>
-    </div>
-
-    <!-- Footer -->
+    <!-- Alt Kısım (Footer) -->
     <footer class="footer">
-      <p>© 2024 Projemim Mobilya. Tüm hakları saklıdır.</p>
+      <div class="footer-content">
+        <div class="social-media">
+          <a
+            href="https://www.instagram.com/projemim/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fab fa-pinterest"></i>
+          </a>
+          |
+          <a
+            href="https://www.instagram.com/projemim/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          |
+          <a
+            href="https://www.instagram.com/projemim/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+        <p>© 2024 Projemim Mobilya. Tüm hakları saklıdır.</p>
+      </div>
     </footer>
 
     <script src="js/services.js"></script>
