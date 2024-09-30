@@ -1,8 +1,6 @@
 /* Genel Stiller */
 body {
   font-family: 'Times New Roman', Times, serif; /* Font ayarı */
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   line-height: 1.6;
   overflow-x: hidden;
@@ -36,7 +34,6 @@ html, body {
   justify-content: space-between;
   padding: 10px 20px;
   background: rgba(0, 0, 0, 0.9); /* Arka plan rengi */
-  border-bottom: 2px solid white; /* Kenar rengi */
   z-index: 1000;
   width: 100%;
 }
@@ -108,8 +105,45 @@ html, body {
   color: white; /* Renk */
 }
 
+/* Hero Section */
+.hero-section {
+  background-image: url('../asset/backround2.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 100px 20px; /* üstten ve alttan boşluk */
+  color: white; /* Metin rengi */
+  text-align: center;
+}
+
+/* Hero Content */
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.about-section {
+  padding: 80px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+
 /* Mobil Mod */
 @media (max-width: 768px) {
+  .about-section {
+    flex-direction: column; /* Dikey hizala */
+  }
+  
   .navbar {
       flex-direction: row;
       justify-content: space-between;
@@ -147,6 +181,7 @@ html, body {
   }
 
   .navbar-menu.active li {
+  
       opacity: 1;
       transform: translateY(0);
   }
@@ -176,4 +211,32 @@ html, body {
       opacity: 1;
       transform: translateY(0);
   }
+}
+/* Alt Kısım (Footer) */
+.footer {
+background-color: #222;
+color: #fff;
+padding: 20px;
+text-align: center;
+}
+
+.footer-content {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 10px; /* Flexbox ile sosyal medya simgeleri arasında boşluk bırak */
+}
+
+.footer-content p {
+margin: 0; /* Alt kısımdaki metnin dış boşluğunu sıfırla */
+}
+
+.footer-content .social-media a {
+color: #fff;
+text-decoration: none;
+padding: 0 10px; /* Sosyal medya simgeleri arasında yatay boşluk bırak */
+}
+
+.footer-content .social-media a:hover {
+color: #555 ; /* Hover olduğunda altı çizili yap */
 }

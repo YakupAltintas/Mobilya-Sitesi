@@ -1,0 +1,363 @@
+/* Genel Stiller */
+body {
+    font-family: 'Times New Roman', Times, serif; /* Font ayarı */
+    box-sizing: border-box;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  
+  /* Tüm elemanlar için kutu modeli ayarlaması */
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+  
+  /* Tüm sayfa için başlangıç sıfırlama */
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  #social-media-navbar{
+    display: none;
+}
+
+  /* Menü Çubuğu */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.9); /* Arka plan rengi */
+    z-index: 1000;
+    width: 100%;
+  }
+  
+  /* Logo */
+  .logo {
+    display: flex;
+    align-items: center;
+    margin-right: auto; /* Sol tarafta boşluk bırak */
+  }
+  
+  .logo img {
+    height: 60px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  
+  /* İletişim Bilgileri (Telefon ve E-posta) */
+  .contact-info {
+    display: flex;
+    align-items: center; /* Dikeyde ortala */
+    gap: 15px; /* İletişim bilgileri arasındaki boşluk */
+    color: white;
+    margin: 0 auto; /* Ortalamak için otomatik kenar boşlukları */
+  }
+  
+  .contact-item {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+  }
+  
+  .contact-item:hover {
+    color: #ddd; /* Hover rengi */
+  }
+  
+  /* Menü Çubuğu Öğeleri */
+  .navbar-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .navbar-menu li {
+    margin:0;
+    padding: 0;
+  }
+  
+  .navbar-menu a {
+    color: white; /* Renk */
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px;
+  }
+  
+  .navbar-menu a:hover {
+    text-decoration: underline; /* Hover durumu */
+  }
+  
+  .menu-toggle {
+    display: none; /* Başlangıçta gizli */
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white; /* Renk */
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    background-image: url('../asset/backround2.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px; /* üstten ve alttan boşluk */
+    color: white; /* Metin rengi */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  /* Hero Content */
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+  
+  /* Kategori Filtreleri */
+  .filter-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .filter-btn {
+    padding: 10px 20px;
+    border: none;
+    background-color: #444;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .filter-btn:hover,
+  .filter-btn.active {
+    background-color: #555;
+  }
+  
+  /* Projeler Galerisi */
+  .projects-section {
+    padding: 60px 20px;
+    background-color: #f5f5f5;
+    text-align: center;
+  }
+  
+  .projects-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+  }
+  
+  .project-item {
+    width: 100%;
+    max-width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    text-align: center; /* Yazıları ortala */
+    margin: 0 auto 30px; /* Elemanlar arasındaki alt boşluğu artır */
+  }
+  
+  .project-item img {
+    width: 100%;
+    height: 200px; /* Sabit yükseklik */
+    object-fit: cover; /* Resmin kapsayıcıya sığması için */
+    transition: transform 0.3s ease;
+  }
+  
+  .project-info {
+    padding: 15px;
+  }
+  
+  .project-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #222;
+  }
+  
+  .project-info p {
+    color: #555;
+    margin: 0;
+  }
+  
+  /* Hover Efekti */
+  .project-item:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+  
+  .project-item:hover img {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+  }
+  
+  /* Mobil ve Tablet Ayarları */
+  @media (max-width: 1024px) {
+    /* Menü */
+    .menu-toggle {
+      display: block;
+    }
+
+    #social-media-navbar{
+        top: 100%;
+        gap: 10px;
+        display: table-footer-group; /* Flexbox kullanarak hizalama */
+        flex-direction: row; /* İkonları yatay hizala */
+        margin: 5px 0; /* İkonlar arasında dikey boşluk bırak */
+        font-size: large; /* İkon boyutunu ayarla */
+    }
+  
+    .navbar-menu {
+      display: flex;
+      flex-direction: column;
+      width: 70%;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 10px 20px;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      height: 100vh;
+      overflow-y: auto;
+      transform: translateX(100%);
+      transition: transform 0.5s ease-out;
+    }
+  
+    .navbar-menu.active {
+      display: flex;
+      transform: translateX(0);
+    }
+  
+    .navbar-menu li {
+      margin: 20px 0;
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+  
+    .navbar-menu.active li {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  
+    .navbar-menu.active li:nth-child(1) { transition-delay: 0.1s; }
+    .navbar-menu.active li:nth-child(2) { transition-delay: 0.2s; }
+    .navbar-menu.active li:nth-child(3) { transition-delay: 0.3s; }
+    .navbar-menu.active li:nth-child(4) { transition-delay: 0.4s; }
+    .navbar-menu.active li:nth-child(5) { transition-delay: 0.5s; }
+  
+    .contact-info {
+      display: none; /* Mobilde gizle */
+    }
+  
+    /* Kategori Butonları */
+    .filter-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .filter-btn {
+      width: 80%;
+      max-width: 300px;
+    }
+  
+    /* Projeler Galerisi */
+    .projects-gallery {
+      gap: 20px;
+    }
+  
+    .project-item {
+      max-width: 100%;
+    }
+  
+    /* Hover Efekti Tablet için Ayarlamalar */
+    .project-item:hover {
+      transform: scale(1.03);
+      transition: transform 0.3s ease;
+    }
+  
+    .project-item:hover img {
+      transform: scale(1.05);
+      transition: transform 0.3s ease;
+    }
+  }
+  
+  /* Animasyonlar */
+  .navbar-menu.active li {
+    animation: fadeSlideIn 0.5s ease-out forwards;
+  }
+  
+  @keyframes fadeSlideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Flexbox ile sosyal medya simgeleri arasında boşluk bırak */
+  }
+  
+  .footer-content p {
+    margin: 0; /* Alt kısımdaki metnin dış boşluğunu sıfırla */
+  }
+  
+  .footer-content .social-media a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 10px; /* Sosyal medya simgeleri arasında yatay boşluk bırak */
+  }
+  
+  .footer-content .social-media a:hover {
+    color: #555 ; /* Hover olduğunda renk değiştir */
+  }
+  
